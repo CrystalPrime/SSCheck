@@ -84,6 +84,7 @@ def ODKShow():
     ax.set_title('Operatör Anket Sayısı (Zaman İçinde)')
     ax.set_xlabel('Tarih')
     ax.set_ylabel('Giriş Sayısı')
+    ax.legend(loc='upper right') 
     st.pyplot(fig)
     
     st.write("Veri İstatistikleri:")
