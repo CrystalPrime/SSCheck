@@ -59,7 +59,7 @@ def ODKCaller(username, password):
 
 def ODKShow():
     username_f = username + "@kizilay.org.tr"
-    df = ODKCaller(username, password)
+    df = ODKCaller(username_f, password)
     df['submission_date'] = pd.to_datetime(df['submission_date']).dt.date
     grouped = df.groupby(['Operatör Adı', 'submission_date']).size().reset_index(name='GIRIS_SAYISI')
     pivot_table = grouped.pivot(index='Operatör Adı', columns='submission_date', values='GIRIS_SAYISI').fillna(0)
