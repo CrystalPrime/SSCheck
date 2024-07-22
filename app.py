@@ -10,7 +10,7 @@ def ODKCaller(username, password):
     odata_api_url = url
 
     params = {"$select": "*", "$top": 100000}
-
+    
     auth_info = (username, password)
 
     headers = {
@@ -58,6 +58,7 @@ def ODKCaller(username, password):
     return df
 
 def ODKShow():
+    username_f = username + "@kizilay.org.tr"
     df = ODKCaller(username, password)
     df['submission_date'] = pd.to_datetime(df['submission_date']).dt.date
     grouped = df.groupby(['Operatör Adı', 'submission_date']).size().reset_index(name='GIRIS_SAYISI')
