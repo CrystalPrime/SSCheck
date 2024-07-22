@@ -79,7 +79,7 @@ def ODKShow():
     colors = plt.cm.tab20.colors  
     selected_columns = pivot_table.loc[:, pivot_table.columns != 'TOPLAM']
  
-    fig, ax = plt.subplots(figsize=(20, 8))
+    fig, ax = plt.subplots(figsize=(20, 12))
     selected_columns.T.plot(kind='line', ax=ax, color= colors)  # Transpose ederek tarihleri x eksenine yerleştiriyoruz
     ax.set_title('Operatör Anket Sayısı (Zaman İçinde)')
     ax.set_xlabel('Tarih')
