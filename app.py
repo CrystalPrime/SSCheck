@@ -58,7 +58,12 @@ def ODKCaller(username, password):
     return df
 
 def ODKShow():
-    username_f = username + "@kizilay.org.tr"
+    deger = "@kizilay.org.tr"
+    if deger in username:
+        username_f = username
+    else:
+        username_f = username + deger
+        
     df = ODKCaller(username_f, password)
     df['submission_date'] = pd.to_datetime(df['submission_date']).dt.date
     grouped = df.groupby(['Operatör Adı', 'submission_date']).size().reset_index(name='GIRIS_SAYISI')
