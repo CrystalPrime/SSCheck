@@ -66,12 +66,11 @@ def ODKShow():
     
     pivot_table['TOPLAM'] = pivot_table.sum(axis=1)
     
-    total_sum = pivot_table.iloc[:, 1:].sum().sum() 
-    no_count = df['Q0_confirmation'].value_counts().get('no', 0)
-    adjusted_sum = total_sum - no_count
+    total_sum = len(df[df["finished_survey"] == "yes"])
+    no_count = len(df[df["finished_survey"] != "yes"])
     
-    st.write(f"Toplam Yapılan Çağrı Sayısı: {total_sum}")
-    st.write(f"Kalan Anket Sayısı: {adjusted_sum}")
+    st.write(f"Tamamlanan Çağrı Sayısı: {total_sum}")
+    st.write(f"Kalan Anket Sayısı: {no_count}")
     
     st.write("Operator Anket Sayısı:")
     st.dataframe(pivot_table)
