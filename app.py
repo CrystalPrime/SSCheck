@@ -5,6 +5,44 @@ import matplotlib.pyplot as plt
 import io
 st.title("SS TAKİP MODÜLÜ")
 
+st.markdown(
+    """
+    <style>
+
+    .fixed-text-right {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 14px;
+        color: #fafafa;
+        background-color: #586e75;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-family: 'Arial', sans-serif;
+        z-index: 9999;
+    }
+
+    .fixed-text-left {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        font-size: 14px;
+        color: #fafafa;
+        background-color: #586e75;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-family: 'Arial', sans-serif;
+        z-index: 9999;
+    }
+    </style>
+
+    <div class="fixed-text-right">Kızılaykart Bilgi Yönetimi</div>
+    <div class="fixed-text-left">Batuhan Aydın</div>
+    """,
+    unsafe_allow_html=True
+)
+
+
 def ODKCaller(username, password):
     url = "https://odk.kizilay.org.tr/v1/projects/8/forms/SS%26amp%3B%2339%3B24%20ODK%20Form%20as%C4%B1l.svc/Submissions"
     odata_api_url = url
